@@ -3,12 +3,12 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const app = express();
 
-const places = require("./routes/places");
+const establishments = require("./routes/establishments");
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-app.use("/places", places);
+app.use("/establishments", establishments);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -2,20 +2,20 @@ const database = require("./database-connection");
 
 module.exports = {
     list(){
-        return database('place').select()
+        return database('establishment').select()
     },
     read(id){
-        return database('place').where('id', id).first()
+        return database('establishment').where('id', id).first()
     },
-    create(place){
-        return database('place').insert(place).returning('*')
+    create(establishment){
+        return database('establishment').insert(establishment).returning('*')
         .then(record => record[0])
     },
-    update(id, place){
-        return database('place').update(place).where('id', id).returning('*')
+    update(id, establishment){
+        return database('establishment').update(establishment).where('id', id).returning('*')
         .then(record => record[0])
     },
     delete(id){
-        return database('place').where('id', id).del()
+        return database('establishment').where('id', id).del()
     }
 };

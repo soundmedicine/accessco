@@ -3,11 +3,11 @@ exports.up = function(knex, Promise) {
     return knex.schema.createTable('establishment', table => {
         table.increments('id').primary()
         table.text('name')
-        table.text('type of establishment')
+        table.text('type')
         table.text('city')
-        table.integer('wheelchair accessibility rating')
-        table.integer('blind accessibility rating')
-        table.integer('deaf accessibility rating')
+        table.integer('wheelchair')
+        table.integer('blind')
+        table.integer('deaf')
         table.text('comments')
     })
   };
